@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model unit="millimeter" xml:lang="en-US" xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" xmlns:BambuStudio="http://schemas.bambulab.com/package/2021" xmlns:p="http://schemas.microsoft.com/3dmanufacturing/production/2015/06" requiredextensions="p">
+ <metadata name="Application">BambuStudio-02.07.01.62</metadata>
+ <metadata name="BambuStudio:3mfVersion">1</metadata>
+ <metadata name="CopyRight">[]</metadata>
+ <metadata name="Copyright">[]</metadata>
+ <metadata name="CreationDate">2026-09-20</metadata>
+ <metadata name="Description">&amp;lt;p&amp;gt;Easily collect your printer&amp;amp;#39;s purge waste with this compact, quick-release bucket.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Designed for simplicity, performance and efficient printing.&amp;lt;/p&amp;gt;&amp;lt;h3&amp;gt;Latest updates&amp;lt;/h3&amp;gt;&amp;lt;p&amp;gt;🔄 Added print profile for X2D.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;🔄 Added print profiles for H Series (H2S, H2D, H2C).&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;🔄 improved clip with a bit more clearance for the screw.&amp;lt;/p&amp;gt;&amp;lt;h3&amp;gt;Model features&amp;lt;/h3&amp;gt;&amp;lt;p&amp;gt;✅ Fully 3D printed, no extra parts required (no magnets, no extra screws).&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;✅ Highly optimized for speed and efficiency.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;✅ No supports.&amp;lt;/p&amp;gt;</metadata>
+ <metadata name="DesignModelId">US981613e6d1b133</metadata>
+ <metadata name="DesignProfileId">759411977</metadata>
+ <metadata name="DesignRegion">US</metadata>
+ <metadata name="Designer">Wölhart</metadata>
+ <metadata name="DesignerCover">379aab3655905afb.png</metadata>
+ <metadata name="DesignerUserId">2449784408</metadata>
+ <metadata name="License">Standard Digital File License</metadata>
+ <metadata name="ModificationDate">2026-09-20</metadata>
+ <metadata name="Origin">original</metadata>
+ <metadata name="ProfileCover">16b1b45cc717f636.png</metadata>
+ <metadata name="ProfileDescription"></metadata>
+ <metadata name="ProfileTitle">P2S / P1 / X1 - with Bambu Logo</metadata>
+ <metadata name="ProfileUserId">2449784408</metadata>
+ <metadata name="ProfileUserName">Wölhart</metadata>
+ <metadata name="Thumbnail_Middle">/Auxiliaries/.thumbnails/thumbnail_middle.png</metadata>
+ <metadata name="Thumbnail_Small">/Auxiliaries/.thumbnails/thumbnail_small.png</metadata>
+ <metadata name="Title">Quick Release Poop Bucket (P2S, X2D, H2S, H2D...)</metadata>
+ <resources>
+ </resources>
+ <build/>
+</model>

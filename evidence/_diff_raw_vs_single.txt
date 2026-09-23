@@ -1,0 +1,647 @@
+589a590,625
+> G28
+> 
+> ; --- V2.93 MQTT sentinel: RESET (arm MQTT auto-trigger) ---
+> M104 S1                ; FL_S2 RESET sentinel (arm MQTT via nozzle_target_temper=1)
+> 
+> ; --- RESET: 4 quick taps (within 3 seconds) ---
+> G1 Z255 F6000     ; Tap 1 - press
+> G4 P150
+> G1 Z243 F3000    ; Release
+> G4 P250
+> G1 Z255 F3000    ; Tap 2 - press
+> G4 P150
+> G1 Z243 F3000    ; Release
+> G4 P250
+> G1 Z255 F3000    ; Tap 3 - press
+> G4 P150
+> G1 Z243 F3000    ; Release
+> G4 P250
+> G1 Z255 F3000    ; Tap 4 - press
+> G4 P150
+> G1 Z243 F3000    ; Release
+> 
+> ; Wait for reset sequence (bender returns home ~7s)
+> G4 P1000         ; Wait for reset complete
+> 
+> ; --- TRIGGER 0: Long tap (3-4s) + Short tap ---
+> 
+> G1 Z255 F3000
+> M400
+> G4 P3500
+> G1 Z243 F3000    ; Release switch
+> G4 P500          ; Wait 500ms
+> 
+> G1 Z255 F3000    ; Short tap - quick press
+> G4 P200          ; Brief contact
+> G1 Z20 F3000    ; Release switch
+684a721,970
+> 
+> ; ================ FL NATURAL COOLDOWN ================
+> ; Hold in the closed chamber for 120 min before the door opens.
+> ; Fans off so the part cools evenly instead of from one side — ASA, ABS
+> ; and PC warp and split when cooled fast while still stuck to the plate.
+> M106 S0          ; part cooling fan off
+> M106 P2 S0       ; auxiliary fan off
+> M106 P3 S0       ; chamber fan off
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> G4 S30
+> ; ================ FL NATURAL COOLDOWN END (120 min) ================
+> 
+876,881c1162
+< ;===== for Textured PEI Plate , lower the nozzle as the nozzle was touching topmost of the texture when homing ==
+<   
+<     
+<       G29.1 Z0.03
+<     
+<   
+---
+> G29.1 Z+0.00 ; for Textured PEI Plate
+882a1164
+> M109 S220
+884,901c1166,1179
+< ;===== nozzle load line ===============================
+< M1002 gcode_claim_action : 51
+<   G29.2 S1 ; ensure z comp turn on
+<   G90
+<   M83
+<   M400 P50
+<   M500 D1
+<   M400 S3
+<   M109 S220
+<   G0 X100 Y0 F24000
+<   M400
+<   ;G130 O0 X100 Y-0.4 Z0.8 F4.36536 L40 E20 D5
+<   G130 O0 X100 Y-0.2 Z0.6 F4.36536 L40 E12 D4
+<   G90
+<   M83
+<   G1 Z1
+<   M400
+< ;===== noozle load line end ===========================
+---
+> M975 S1
+> G90
+> M83
+> T1000
+> 
+> G92 E0
+> 
+> G1 E50 F200
+> 
+> M400
+> 
+> G1 X100 F21000
+> 
+> M400
+209587,209588c209865,209867
+< M17 S
+< M17 Z0.4 ; lower z motor current to reduce impact if there is something in the bottom
+---
+> M140 S0 ; turn off bed
+> M104 S0 ; turn off hotend
+> M106 P2 S255 ; turn on remote part cooling fan
+209590,209593c209869,209870
+<     
+<         G1 Z174 F600
+<         G1 Z172
+<     
+---
+> ; --- V2.93 MQTT sentinel: T1 (last-layer done) ---
+> M104 S2                ; FL_S2 T1 sentinel (open door + fan via nozzle_target_temper=2)
+209595,209596c209872,209879
+< M400 P100
+< M17 R ; restore z current
+---
+> ; --- TRIGGER 1: Long press (4-6 seconds) - Fan ON + Door Open ---
+> G1 Z243 F3000    ; Go to position
+> M400
+> G1 Z255 F3000       ; Press switch (slow = ~5s contact)
+> M400
+> G4 S5
+> M400
+> G1 Z243 F3000    ; Release switch
+209597a209881
+> ; Fan stays ON, door is opening
+209599,209602c209883
+< M220 S100  ; Reset feedrate magnitude
+< M201.2 K1.0 ; Reset acc magnitude
+< M73.2 R1.0 ;Reset left time magnitude
+< M1002 set_gcode_claim_speed_level : 0
+---
+> ;Cooldown Start
+209604,209605c209885,209946
+< M1015.3 S0 ;disable clog detect
+< M1015.4 S0 K0 ;disable air printing detect
+---
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+> M190 S26
+209607,209609c209948
+< ;=====printer finish air purification=========
+< M622.1 S0
+< M1002 judge_flag print_finish_air_filt_flag
+---
+> ;Cooldown End
+209611,209617c209950
+< M622 J1
+< M1002 gcode_claim_action : 66
+< M145 P1
+< M106 P2 S255
+< M400 S180
+< M106 P2 S0
+< M623
+---
+> M140 S0 ; turn off bed
+209619,209626c209952,210026
+< M622 J2
+< M1002 gcode_claim_action : 66
+< M145 P0
+< M106 P3 S255
+< M400 S180
+< M106 P3 S0
+< M623
+< ;=====printer finish air purification=========
+---
+> M104 S0 ; turn off hotend
+> 
+> ; --- V2.93 MQTT sentinel: T2 (cool-done) ---
+> M104 S3                ; FL_S2 T2 sentinel (start bending via nozzle_target_temper=3)
+> 
+> ; --- TRIGGER 2: Triple tap - Start bending ---
+> G4 P500
+> G1 Z255 F1000    ; Tap 1
+> G4 P150
+> G1 Z243 F3000
+> G4 P300
+> G1 Z255 F1000    ; Tap 2
+> G4 P150
+> G1 Z243 F3000
+> G4 P300
+> G1 Z255 F1000    ; Tap 3
+> G4 P150
+> G1 Z243 F3000
+> 
+> G4 P6000         ; Wait for count window to expire
+> 
+> ; --- Wait for bending cycles ---
+> ; 5 cycles × ~16s each = ~80 seconds
+> ; Adjust based on your configured cycle count
+> G4 P85000        ; Wait for bending complete
+> 
+> ; @fl:section:start "p2s.clear.sweep"
+> ;============================= PUSH SECTION =============================
+> ; ---------- choose sweep height ----------
+> 
+> ; @fl:replace next 1 "clear-height.smart-default"
+> G1 Z160.00 F10000
+> 
+> M400
+> 
+> ; -------- central sweeps (2×) --------
+> G1 X125 F3000          ; move to mid-X and start first sweep
+> G1 Y250 F3000          ; rear edge
+> G1 Y0   F3000          ; front edge
+> G1 Y250 F3000          ; rear edge – second sweep
+> G1 Y0   F3000          ; front edge
+> 
+> ; -------- extended right-to-left rake --------
+> ; Start at far right (X220), sweep back→front, then step leftward 30 mm each pass
+> G1 Y250 F3000
+> G1 X220 F3000
+> G1 Y0   F3000
+> 
+> G1 Y250 F3000
+> G1 X190 F3000
+> G1 Y0   F3000
+> 
+> G1 Y250 F3000
+> G1 X160 F3000
+> G1 Y0   F3000
+> 
+> G1 Y250 F3000
+> G1 X130 F3000
+> G1 Y0   F3000
+> 
+> G1 Y250 F3000
+> G1 X100 F3000
+> G1 Y0   F3000
+> 
+> G1 Y250 F3000
+> G1 X70  F3000
+> G1 Y0   F3000
+> 
+> G1 Y250 F3000
+> G1 X30  F3000          ; **last pass now at X30 instead of X40**
+> G1 Y0   F3000          ; finish at front edge on X30
+> 
+> ; ---------- choose sweep height ----------
+> 
+> G1 Y250 F3000
+209628,209642d210027
+< ;=====printer finish  sound=========
+< M17
+< M400 S1
+< M1006 S1
+< M1006 A53 B10 L50 C53 D10 M50 E53 F10 N50 
+< M1006 A57 B10 L50 C57 D10 M50 E57 F10 N50 
+< M1006 A0 B15 L0 C0 D15 M0 E0 F15 N0 
+< M1006 A53 B10 L50 C53 D10 M50 E53 F10 N50 
+< M1006 A57 B10 L50 C57 D10 M50 E57 F10 N50 
+< M1006 A0 B15 L0 C0 D15 M0 E0 F15 N0 
+< M1006 A48 B10 L50 C48 D10 M50 E48 F10 N50 
+< M1006 A0 B15 L0 C0 D15 M0 E0 F15 N0 
+< M1006 A60 B10 L50 C60 D10 M50 E60 F10 N50 
+< M1006 W
+< ;=====printer finish  sound=========
+209644c210029,210120
+< M18
+---
+> G1 X220 F3000
+> 
+> M400
+> 
+> G1 Z160.00 F12000 ; lift to Z = 160.00 mm
+> 
+> M400 ; wait for Z move to finish
+> 
+> ; -------- extended right-to-left rake --------
+> ; Start at far right (X220), sweep back→front, then step leftward 30 mm each pass
+> G1 Y250 F12000
+> G1 X220 F12000
+> G1 Y0   F12000
+> 
+> G1 Y250 F12000
+> G1 X190 F12000
+> G1 Y0   F12000
+> 
+> G1 Y250 F12000
+> G1 X160 F12000
+> G1 Y0   F12000
+> 
+> G1 Y250 F12000
+> G1 X130 F12000
+> G1 Y0   F12000
+> 
+> G1 Y250 F12000
+> G1 X100 F12000
+> G1 Y0   F12000
+> 
+> G1 Y250 F12000
+> G1 X70  F12000
+> G1 Y0   F12000
+> 
+> G1 Y250 F12000
+> G1 X30  F12000          ; **last pass now at X30 instead of X40**
+> G1 Y0   F12000          ; finish at front edge on X30
+> 
+> ;===============================  END SECTION  =============================
+> 
+> M73 P74 R2
+> G1 X65 Y245 F12000     ; move to safe corner before parking
+> G1 Y265 F3000          ; final park at rear edge (idle position)
+> 
+> ; --- V2.93 MQTT sentinel: Safety (push-done) ---
+> M104 S4                ; FL_S2 safety sentinel (run safety check via nozzle_target_temper=4)
+> 
+> ; --- TRIGGER SAFETY CHECK: Double tap ---
+> G1 Z243 F3000    ; Go to position
+> M400
+> G1 Z255 F1000    ; Tap 1
+> G4 P150
+> G1 Z243 F3000
+> G4 P300
+> G1 Z255 F1000    ; Tap 2
+> G4 S5
+> G1 Z243 F3000
+> 
+> ; --- Wait for safety check (5-step sequence) ---
+> ; Bender extend(7s) + retract(7s) + extend(7s) + door open(8s) + door close(8s) = ~37s
+> G4 P20000        ; Wait for safety check
+> 
+> ; --- V2.93 MQTT sentinel: T3 (push-done, door close) ---
+> M104 S5                ; FL_S2 T3 sentinel (final door close via nozzle_target_temper=5)
+> 
+> ; @fl:section:end "p2s.clear.sweep"
+> ; @fl:section:start "p2s.stage2.trigger3"
+> ; --- TRIGGER 3: Long press (4-6 seconds) - Final door close ---
+> G1 Z255 F3000
+> M400       ; Press switch (slow = ~5s contact)
+> G4 S5
+> M400
+> G1 Z220 F3000    ; Release switch
+> ; @fl:section:end "p2s.stage2.trigger3"
+> 
+> M106 S0 ; turn off fan
+> M106 P2 S0 ; turn off remote part cooling fan
+> M106 P3 S0 ; turn off chamber cooling fan
+> 
+> M400 ; wait all motion done
+> M17 S
+> M17 Z0.4 ; lower z motor current to reduce impact if there is something in the bottom
+> 
+> M400 P100
+> M17 R ; restore z current
+> 
+> M220 S100  ; Reset feedrate magnitude
+> M201.2 K1.0 ; Reset acc magnitude
+> M73.2   R1.0 ;Reset left time magnitude
+> M1002 set_gcode_claim_speed_level : 0
+> 
+> M17 X0.8 Y0.8 Z0.5 ; lower motor current to 45% power

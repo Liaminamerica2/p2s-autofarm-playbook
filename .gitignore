@@ -1,0 +1,16 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Secrets / local config — never commit these
+.env
+.env.*
+*credentials*
+
+# Slicer / app temp files
+*.tmp
+*~
