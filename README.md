@@ -81,6 +81,6 @@ Corrections and other-printer notes are welcome. Open an issue or PR with the pr
 
 - [Bambuddy](https://github.com/maziggy/bambuddy) by maziggy -- what a framework!
 - 3D Farmers (FarmLoop) documentation and community
-- Claude for G-code
+- Claude
 
 
